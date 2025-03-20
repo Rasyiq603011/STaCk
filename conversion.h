@@ -10,20 +10,16 @@ int GetInput(char *Massage);
 // mengambil nilai modulus 2
 int modulus2(int Nilai);
 
-
+// Membagi nilai dengan 2
 void Bagi2(int *Nilai);
 
-// Modul recursive yang akan mengembalikan stack nilai desimal
-address *makeBinaryStack(int desimal);
+// Modul yang akan mengembalikan stack nilai binary
+address makeBinaryStack(int desimal);
 
+// Menampilkan nilai binary dari stack
 void GetBinary(address S);
 
 #endif
-
-
-
-
-
 
 
  

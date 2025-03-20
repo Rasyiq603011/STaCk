@@ -2,14 +2,15 @@
 #define STACK_H
 #include "linked.h"
 
-// Membuat 
-void CreateStack();
+
+// Membuat stack baru (empty)
+void CreateStack(address *S);
 
 // Insert Khusus stack dimana selalu insert di Akhir
 void stackAdd(address *S, infotype desimal);
 
-// delete Kuhus stack dimana selalu delete diakhir
+// delete Khusus stack dimana selalu delete diakhir
 void deleteStack(address *S);
 
-
 #endif
+

@@ -21,24 +21,42 @@ void Bagi2(int *Nilai){
 	*Nilai = *Nilai/2;
 }
 
-address *makeBinaryStack(int desimal){
-	address *Binary;
+address makeBinaryStack(int desimal){
+	address Binary = Nil; 
 	int temp;
-	while (desimal != 0){
+	
+
+	if (desimal == 0) {
+		address newNode;
+		AllocElmt(&newNode);
+		IsiValueElmt(&newNode, 0);
+		return newNode;
+	}
+	
+	while (desimal > 0){
 		temp = modulus2(desimal);
-		stackAdd(Binary,temp);
+		address newNode;
+		AllocElmt(&newNode);
+		IsiValueElmt(&newNode, temp);
+		InsertAwal(&Binary, newNode);
 		Bagi2(&desimal);
 	}
 	return Binary;
 }
 
 void GetBinary(address S){
-	address temp = BalikList (S);
-	while (true){
-		if (!isEmpty(temp)){
-			printf("%d", info(temp));
-			S = next(temp);	
-		}	
+	printf("Binary: ");
+	
+	if (isEmpty(S)) {
+		printf("0"); 
+		return;
 	}
+
+	address temp = S;
+	while (!isEmpty(temp)) {
+		printf("%d", info(temp));
+		temp = next(temp);
+	}
+	printf("\n");
 }
 
